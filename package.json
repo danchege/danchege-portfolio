@@ -1,0 +1,21 @@
+{
+  "name": "daniel-chege-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Daniel Chege — Professional Portfolio",
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "dev":     "vite",
+    "build":   "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react":     "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite":                 "^5.4.1"
+  }
+}
