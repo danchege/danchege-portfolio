@@ -45,7 +45,7 @@ constantly exploring new technologies and committed to continuous learning.`,
   twitter: "https://twitter.com/dan_chege_",
   facebook: "https://www.facebook.com/danny.chei.1",
   whatsapp: "https://wa.me/254716563774",
-  cvUrl: "/src/documents/Daniel Chege cv.pdf",
+  cvUrl: "/Daniel Chege cv.pdf",
   emailjsServiceId: "service_jwceu8t",
   emailjsTemplateId: "template_ycqpqm9",
   emailjsPublicKey: "-qO9nsFXC7nNbxi74",
@@ -55,7 +55,7 @@ export const STATS = [
   { number: "25+", label: "Projects Built" },
   { number: "3+", label: "Certifications" },
   { number: "10+", label: "Technologies" },
-  { number: "1+", label: "Years Experience" },
+  { number: "3+", label: "Years Experience" },
 ];
 
 export const TRAITS = [

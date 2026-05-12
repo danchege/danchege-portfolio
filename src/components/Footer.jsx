@@ -2,7 +2,7 @@
 //  Footer.jsx  —  Site footer with social links
 // ============================================================
 import { useTheme, tokens } from "../context/ThemeContext";
-import { PERSONAL } from "../data/portfolioData";
+import { PERSONAL, NAV_ITEMS } from "../data/portfolioData";
 
 import { FaGithub, FaLinkedinIn, FaXTwitter, FaWhatsapp } from "react-icons/fa6";
 
@@ -50,6 +50,38 @@ const Footer = ({ setPage }) => {
             {PERSONAL.name}
           </span>
         </div>
+
+        {/* Navigation */}
+        <nav style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item}
+              onClick={() => setPage(item)}
+              style={{
+                background: "none",
+                border: "none",
+                color: t.textMuted,
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "0.9rem",
+                fontWeight: 500,
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+                textDecoration: "none",
+                padding: 0,
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.color = t.accent;
+                e.target.style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.color = t.textMuted;
+                e.target.style.transform = "translateY(0)";
+              }}
+            >
+              {item}
+            </button>
+          ))}
+        </nav>
 
         {/* Copyright */}
         <p style={{
