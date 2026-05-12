@@ -2,11 +2,5 @@
   "buildCommand": "pnpm build",
   "outputDirectory": "dist",
   "installCommand": "pnpm install",
-  "framework": "vite",
-  "rewrites": [
-    {
-      "source": "/((?!.*\\.(?:ico|pdf|png|jpg|jpeg|gif|svg|css|js|woff|woff2|ttf|eot)$).*)",
-      "destination": "/index.html"
-    }
-  ]
+  "framework": "vite"
 }
