@@ -2,5 +2,15 @@
   "buildCommand": "pnpm build",
   "outputDirectory": "dist",
   "installCommand": "pnpm install",
-  "framework": "vite"
+  "framework": "vite",
+  "routes": [
+    {
+      "src": "/daniel-chege-cv.pdf",
+      "dest": "/daniel-chege-cv.pdf"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
