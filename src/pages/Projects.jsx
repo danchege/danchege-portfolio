@@ -106,32 +106,34 @@ const ProjectCard = ({ project, index, inView }) => {
 
       {/* Links */}
       <div style={{ display: "flex", gap: "0.75rem" }}>
-        <a
-          href={project.demo}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            flex: 1, textAlign: "center",
-            padding: "0.65rem 0",
-            background: t.gradient,
-            color: "#fff",
-            borderRadius: 10, textDecoration: "none",
-            fontWeight: 700, fontSize: "0.88rem",
-            fontFamily: "'DM Sans', sans-serif",
-            transition: "opacity 0.2s",
-            boxShadow: `0 4px 18px ${t.accentGlow}`,
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.opacity = "0.85"}
-          onMouseLeave={(e) => e.currentTarget.style.opacity = "1"}
-        >
-          <FaArrowUpRightFromSquare /> Live Demo
-        </a>
+        {project.demo !== "#" && (
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              flex: 1, textAlign: "center",
+              padding: "0.65rem 0",
+              background: t.gradient,
+              color: "#fff",
+              borderRadius: 10, textDecoration: "none",
+              fontWeight: 700, fontSize: "0.88rem",
+              fontFamily: "'DM Sans', sans-serif",
+              transition: "opacity 0.2s",
+              boxShadow: `0 4px 18px ${t.accentGlow}`,
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.opacity = "0.85"}
+            onMouseLeave={(e) => e.currentTarget.style.opacity = "1"}
+          >
+            <FaArrowUpRightFromSquare /> Live Demo
+          </a>
+        )}
         <a
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            flex: 1, textAlign: "center",
+            flex: project.demo === "#" ? 1 : 1, textAlign: "center",
             padding: "0.65rem 0",
             background: "transparent",
             color: t.accent,

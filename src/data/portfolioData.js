@@ -15,6 +15,10 @@ import {
   FaComments,
   FaBrain,
   FaCalendarDays,
+  FaFlask,
+  FaDownload,
+  FaFileCode,
+  FaDatabase,
 } from "react-icons/fa6";
 
 export const PERSONAL = {
@@ -35,12 +39,12 @@ and penetration testing. Comfortable in both Linux and Windows environments, I'm
 constantly exploring new technologies and committed to continuous learning.`,
   location: "Nairobi, Kenya",
   email: "danychege28@gmail.com",
-  phone: "+254 713 332 171",
+  phone: "+254 716 563 774",
   github: "https://github.com/danchege",
   linkedin: "https://www.linkedin.com/in/dan-chege-296b56351/",
   twitter: "https://twitter.com/dan_chege_",
   facebook: "https://www.facebook.com/danny.chei.1",
-  whatsapp: "https://wa.me/254713332171",
+  whatsapp: "https://wa.me/254716563774",
   cvUrl: "/src/documents/Daniel Chege cv.pdf",
   emailjsServiceId: "service_jwceu8t",
   emailjsTemplateId: "template_ycqpqm9",
@@ -91,6 +95,71 @@ export const EDUCATION = [
 export const PROJECTS = [
   {
     id: 1,
+    name: "Alchemist",
+    icon: FaFlask,
+    tag: "Data",
+    category: "Data Science / Web Tool",
+    description:
+      "A web-based data cleaning and transformation tool built with Python Flask backend and modern JavaScript frontend. Upload, clean, transform, visualize, and export datasets from CSV, Excel, JSON, and SQLite with session management and case-insensitive filtering.",
+    demo: "https://alchemist-6qfo.onrender.com/",
+    github: "https://github.com/danchege/Alchemist",
+    stack: ["Python", "Flask", "JavaScript", "Data Processing"],
+    featured: true,
+  },
+  {
+    id: 2,
+    name: "Ultimate YouTube Downloader",
+    icon: FaDownload,
+    tag: "Desktop",
+    category: "Desktop Application / Python",
+    description:
+      "A powerful, modern YouTube downloader with a beautiful dark/light mode interface, built with Python and Tkinter. Features download history, statistics tracking, system notifications, and advanced download options. Used by many users - available as executable download from releases.",
+    demo: "#",
+    github: "https://github.com/danchege/youtube_downloader",
+    stack: ["Python", "Tkinter", "Desktop App", "GUI"],
+    featured: true,
+  },
+  {
+    id: 3,
+    name: "YT ULTIMATE DOWNLOADER",
+    icon: FaFileCode,
+    tag: "Script",
+    category: "Windows Script / Automation",
+    description:
+      "A powerful, user-friendly Windows batch script for downloading YouTube videos and audio with advanced features and automatic dependency management. Lightweight and efficient solution for YouTube content downloading.",
+    demo: "#",
+    github: "https://github.com/danchege/YT-ULTIMATE-DOWNLOADER",
+    stack: ["Batch Script", "Windows", "Automation", "CLI"],
+    featured: true,
+  },
+  {
+    id: 4,
+    name: "Aegis",
+    icon: FaShieldHalved,
+    tag: "Security",
+    category: "Security / Web Tool",
+    description:
+      "Aegis is a minimal, production-grade, browser-based encryption tool. All cryptographic operations are performed entirely in your browser using Web Crypto API. No data ever leaves your device, ensuring complete privacy and security.",
+    demo: "#",
+    github: "https://github.com/danchege/Aegis-2.0",
+    stack: ["JavaScript", "Web Crypto API", "Browser", "Security"],
+    featured: true,
+  },
+  {
+    id: 5,
+    name: "MySQL Navigator",
+    icon: FaDatabase,
+    tag: "Database",
+    category: "Database / Desktop Application",
+    description:
+      "A modern, GUI-based MySQL management tool built with Python, Tkinter, and ttkbootstrap. Designed as a clean replacement for legacy batch scripts and command-line workflows, providing a professional desktop application similar in spirit to MySQL Workbench.",
+    demo: "#",
+    github: "https://github.com/danchege/mysql_python_navigator",
+    stack: ["Python", "Tkinter", "MySQL", "GUI"],
+    featured: true,
+  },
+  {
+    id: 6,
     name: "Farmbot",
     icon: FaRobot,
     tag: "AI",
@@ -103,7 +172,7 @@ export const PROJECTS = [
     featured: true,
   },
   {
-    id: 2,
+    id: 7,
     name: "Tushikane",
     icon: FaHandshake,
     tag: "Full-Stack",
@@ -116,7 +185,7 @@ export const PROJECTS = [
     featured: true,
   },
   {
-    id: 3,
+    id: 8,
     name: "AgriConnect",
     icon: FaLeaf,
     tag: "Platform",
@@ -129,7 +198,7 @@ export const PROJECTS = [
     featured: true,
   },
   {
-    id: 4,
+    id: 9,
     name: "CtrlZone",
     icon: FaGamepad,
     tag: "Web",
@@ -142,7 +211,7 @@ export const PROJECTS = [
     featured: false,
   },
   {
-    id: 5,
+    id: 10,
     name: "Dev Dan Mingle",
     icon: FaComments,
     tag: "Real-time",
@@ -155,7 +224,7 @@ export const PROJECTS = [
     featured: false,
   },
   {
-    id: 6,
+    id: 11,
     name: "Dev Quiz",
     icon: FaBrain,
     tag: "Education",
@@ -168,7 +237,7 @@ export const PROJECTS = [
     featured: false,
   },
   {
-    id: 7,
+    id: 12,
     name: "Study Plan Generator",
     icon: FaCalendarDays,
     tag: "Tools",

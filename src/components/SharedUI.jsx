@@ -150,10 +150,9 @@ export const Button = ({ children, variant = "primary", onClick, href, target, s
       transform: hovered ? "translateY(-2px)" : "none",
     },
     outline: {
-      background: "transparent",
+      background: hovered ? t.gradient : "transparent",
       color: hovered ? "#fff" : t.accent,
       border: `2px solid ${t.accent}`,
-      background: hovered ? t.gradient : "transparent",
       transform: hovered ? "translateY(-2px)" : "none",
     },
     ghost: {
