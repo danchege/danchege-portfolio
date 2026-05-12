@@ -23,12 +23,12 @@ import {
 
 export const PERSONAL = {
   name: "Daniel Chege",
-  initials: "DC",
+  initials: "D",
   taglines: [
     "Software Developer",
     "Full-Stack MERN Developer",
     "Cyber Security Enthusiast",
-    "Web Designer",
+    "Web Developer",
     "Tech Innovator",
   ],
   bio: `I'm a self-driven developer with a strong foundation in full-stack development
