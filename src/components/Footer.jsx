@@ -41,7 +41,7 @@ const Footer = ({ setPage }) => {
             fontFamily: "'Syne', sans-serif", fontWeight: 900,
             fontSize: "0.85rem", color: "#fff",
           }}>
-            DC
+            D
           </div>
           <span style={{
             fontFamily: "'Syne', sans-serif",

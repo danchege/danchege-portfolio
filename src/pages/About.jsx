@@ -113,29 +113,53 @@ const About = ({ setPage }) => {
                 Quick Info
               </h4>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
-                {infoRows.map(({ icon, label, value }) => (
-                  <div key={label} style={{
-                    display: "flex", alignItems: "center", gap: "1rem",
-                    padding: "0.85rem 1rem",
-                    background: t.bgAlt,
-                    borderRadius: 12, border: `1px solid ${t.border}`,
-                  }}>
-                    <span style={{ fontSize: 20, minWidth: 26 }}>
-                      {(() => {
-                        const Icon = icon;
-                        return <Icon />;
-                      })()}
-                    </span>
-                    <div>
-                      <div style={{ color: t.textMuted, fontSize: "0.72rem", fontWeight: 600, fontFamily: "'DM Sans', sans-serif", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-                        {label}
-                      </div>
-                      <div style={{ color: t.text, fontWeight: 600, fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", marginTop: "0.1rem" }}>
-                        {value}
+                {infoRows.map(({ icon, label, value }) => {
+                  const isClickable = label === "GitHub" || label === "LinkedIn";
+                  const href = label === "GitHub" ? PERSONAL.github : PERSONAL.linkedin;
+                  
+                  return (
+                    <div key={label} style={{
+                      display: "flex", alignItems: "center", gap: "1rem",
+                      padding: "0.85rem 1rem",
+                      background: t.bgAlt,
+                      borderRadius: 12, border: `1px solid ${t.border}`,
+                      ...(isClickable && { cursor: "pointer", transition: "all 0.2s ease" }),
+                    }}
+                    onClick={isClickable ? () => window.open(href, "_blank") : undefined}
+                    onMouseEnter={isClickable ? (e) => {
+                      e.currentTarget.style.background = t.accent + "15";
+                      e.currentTarget.style.borderColor = t.accent;
+                    } : undefined}
+                    onMouseLeave={isClickable ? (e) => {
+                      e.currentTarget.style.background = t.bgAlt;
+                      e.currentTarget.style.borderColor = t.border;
+                    } : undefined}
+                    >
+                      <span style={{ fontSize: 20, minWidth: 26 }}>
+                        {(() => {
+                          const Icon = icon;
+                          return <Icon />;
+                        })()}
+                      </span>
+                      <div>
+                        <div style={{ color: t.textMuted, fontSize: "0.72rem", fontWeight: 600, fontFamily: "'DM Sans', sans-serif", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+                          {label}
+                        </div>
+                        {!isClickable && (
+                          <div style={{ 
+                            color: t.text, 
+                            fontWeight: 600, 
+                            fontFamily: "'DM Sans', sans-serif", 
+                            fontSize: "0.9rem", 
+                            marginTop: "0.1rem"
+                          }}>
+                            {value}
+                          </div>
+                        )}
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </Card>
           </div>
