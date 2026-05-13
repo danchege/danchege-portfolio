@@ -134,21 +134,14 @@ const Home = ({ setPage }) => {
           <h1 style={{
             fontFamily: "'Syne', sans-serif",
             fontWeight: 900,
-            fontSize: "clamp(1.5rem, 4vw, 3rem)",
+            fontSize: "clamp(1rem, 2.5vw, 2rem)",
             lineHeight: 1.08,
-            color: t.text,
             marginBottom: "0.5rem",
             letterSpacing: "-0.03em",
           }}>
-            Hi, I'm{" "}
-            <span style={{
-              color: t.accent,
-              backgroundImage: t.gradient,
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}>
-              Daniel Chege
-            </span>
+            <span style={{ color: t.accent }}>DESIGN</span> • {" "}
+            <span style={{ color: t.accent2 }}>CODE</span> • {" "}
+            <span style={{ color: t.accent }}>CREATE</span>
           </h1>
         </div>
 
