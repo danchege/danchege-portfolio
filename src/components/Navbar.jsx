@@ -109,7 +109,23 @@ const Navbar = ({ page, setPage }) => {
 
         {/* Mobile controls */}
         <div className="show-mobile" style={{ alignItems: "center", gap: "0.75rem" }}>
-          <button onClick={toggleDark} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 22 }}>
+          <button
+            onClick={toggleDark}
+            style={{
+              background: t.bgCard,
+              border: `1px solid ${t.border}`,
+              borderRadius: 8,
+              width: 40,
+              height: 40,
+              cursor: "pointer",
+              fontSize: 20,
+              color: t.text,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            aria-label={dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          >
             {dark ? <FaSun /> : <FaMoon />}
           </button>
           <button
