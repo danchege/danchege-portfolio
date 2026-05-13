@@ -1,7 +1,7 @@
 // ============================================================
 //  Contact.jsx  —  Contact form + social links page
 // ============================================================
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTheme, tokens } from "../context/ThemeContext";
 import { useInView } from "../hooks/hooks";
 import { PERSONAL } from "../data/portfolioData";
@@ -88,37 +88,8 @@ const Contact = () => {
   const [ref, inView] = useInView();
 
   const [form, setForm]       = useState({ name: "", email: "", subject: "", message: "" });
-  const [status, setStatus]   = useState(null); // null | "sending" | "sent" | "error"
-  const [ejsReady, setEjsReady] = useState(false);
 
-  // Load EmailJS SDK
-  useEffect(() => {
-    if (window.emailjs) { window.emailjs.init(PERSONAL.emailjsPublicKey); setEjsReady(true); return; }
-    const script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js";
-    script.onload = () => { window.emailjs.init(PERSONAL.emailjsPublicKey); setEjsReady(true); };
-    document.head.appendChild(script);
-  }, []);
 
-  const handleSend = async () => {
-    if (!form.name || !form.email || !form.message) {
-      alert("Please fill in name, email, and message.");
-      return;
-    }
-    setStatus("sending");
-    try {
-      await window.emailjs.send(PERSONAL.emailjsServiceId, PERSONAL.emailjsTemplateId, {
-        from_name:  form.name,
-        from_email: form.email,
-        subject:    form.subject,
-        message:    form.message,
-      });
-      setStatus("sent");
-      setForm({ name: "", email: "", subject: "", message: "" });
-    } catch {
-      setStatus("error");
-    }
-  };
 
   const update = (field) => (e) => setForm({ ...form, [field]: e.target.value });
 
@@ -155,35 +126,17 @@ const Contact = () => {
               <Field label="Subject"        id="subject" value={form.subject} onChange={update("subject")} t={t} />
               <Field label="Message *"      id="message" multiline value={form.message} onChange={update("message")} t={t} />
 
-              {/* Status messages */}
-              {status === "sent" && (
-                <div style={{
-                  padding: "0.9rem 1.2rem", borderRadius: 10,
-                  background: "rgba(34,197,94,0.12)", border: "1px solid rgba(34,197,94,0.3)",
-                  color: "#22c55e", fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "0.9rem", fontWeight: 600, marginBottom: "1rem",
-                }}>
-                  ✅ Message sent successfully! I'll get back to you soon.
-                </div>
-              )}
-              {status === "error" && (
-                <div style={{
-                  padding: "0.9rem 1.2rem", borderRadius: 10,
-                  background: "rgba(239,68,68,0.12)", border: "1px solid rgba(239,68,68,0.3)",
-                  color: "#ef4444", fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "0.9rem", fontWeight: 600, marginBottom: "1rem",
-                }}>
-                  ❌ Failed to send. Please try again or email me directly.
-                </div>
-              )}
-
-              <Button
-                variant="primary"
-                onClick={handleSend}
-                style={{ width: "100%", justifyContent: "center" }}
+              <a
+                href={`mailto:${PERSONAL.email}?subject=${encodeURIComponent(form.subject || 'Contact from Portfolio')}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)}`}
+                style={{ textDecoration: "none", width: "100%" }}
               >
-                {status === "sending" ? "⏳ Sending..." : "Send Message →"}
-              </Button>
+                <Button
+                  variant="primary"
+                  style={{ width: "100%", justifyContent: "center" }}
+                >
+                  Send Message →
+                </Button>
+              </a>
             </Card>
           </div>
 

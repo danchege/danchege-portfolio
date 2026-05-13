@@ -2,5 +2,16 @@
   "buildCommand": "pnpm build",
   "outputDirectory": "dist",
   "installCommand": "pnpm install",
-  "framework": "vite"
+  "framework": "vite",
+  "headers": [
+    {
+      "source": "/daniel-chege-cv.pdf",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        }
+      ]
+    }
+  ]
 }
