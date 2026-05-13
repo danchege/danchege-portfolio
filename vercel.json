@@ -5,7 +5,7 @@
   "framework": "vite",
   "headers": [
     {
-      "source": "/cv.pdf",
+      "source": "/daniel-chege-cv.pdf",
       "headers": [
         {
           "key": "Content-Type",
